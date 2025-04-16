@@ -1,0 +1,22 @@
+Comandos utilizados:
+
+
+Builds ->
+
+docker build -t mock-weather-api .
+
+docker build -t main-api .
+
+
+
+Network ->
+
+docker network create weather-network
+
+
+
+Conectar na Network ->
+
+docker run -d --name mock-weather-api --network weather-network -p 4000:4000 mock-weather-api
+
+docker run -d --name main-api --network weather-network -p 3000:3000 main-api
